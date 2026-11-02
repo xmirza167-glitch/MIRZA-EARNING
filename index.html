@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07130d">
+  <title>MIRZA EARN — Rewards Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="#"><span class="brand-mark">M</span><span>MIRZA <b>EARN</b><small>REWARDS PLATFORM</small></span></a>
+    <div class="nav-label">WORKSPACE</div>
+    <button class="nav active" data-view="dashboard">▦ <span>Dashboard</span></button>
+    <button class="nav" data-view="tasks">✦ <span>Earn rewards</span><i id="taskCount">4</i></button>
+    <button class="nav" data-view="referrals">♧ <span>Referrals</span></button>
+    <button class="nav" data-view="wallet">◈ <span>My wallet</span></button>
+    <button class="nav" data-view="withdraw">⇧ <span>Withdraw</span></button>
+    <div class="sidebar-bottom"><div class="secure-dot"></div><span>Secure rewards workspace</span><small>v1.0 • Demo mode</small></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="mobile-menu" id="mobileMenu">☰</button>
+      <div><div class="eyebrow">TUESDAY, YOUR REWARDS START HERE</div><h1 id="pageTitle">Dashboard</h1></div>
+      <div class="profile"><div class="avatar">M</div><div><b>Mirza Member</b><small>Free account</small></div></div>
+    </header>
+
+    <div class="demo-banner"><span>●</span><div><b>Preview mode</b><small>Displayed rewards are sample values. No real money is credited or paid in this demo.</small></div><button id="resetDemo">Reset demo</button></div>
+
+    <section class="view active" id="dashboard">
+      <div class="welcome"><div><span class="pill">✦ MEMBER AREA</span><h2>Welcome back, <em>Mirza!</em></h2><p>Complete eligible activities and track your rewards in one place.</p></div><div class="welcome-art">M<span>+</span></div></div>
+      <div class="stats">
+        <article class="stat-card balance"><div class="stat-top"><span>Available demo balance</span><span>◈</span></div><strong id="balanceMain">Rs 125.00</strong><small>Illustrative only · Not withdrawable</small></article>
+        <article class="stat-card"><div class="stat-top"><span>Tasks completed</span><span>✓</span></div><strong id="completedMain">2</strong><small>In this demo session</small></article>
+        <article class="stat-card"><div class="stat-top"><span>Referral invites</span><span>♧</span></div><strong id="referralsMain">3</strong><small>Sample account activity</small></article>
+      </div>
+      <div class="section-heading"><div><span class="eyebrow">YOUR NEXT STEP</span><h3>Earn by completing tasks</h3></div><button class="text-btn" data-goto="tasks">View all tasks →</button></div>
+      <div class="task-grid" id="dashboardTasks"></div>
+      <div class="notice"><span>ⓘ</span><p><b>How real rewards work:</b> Reward tasks must be funded by verified sponsors. Withdrawals can only be enabled after the platform has a real revenue source, verified payment provider and backend approval process.</p></div>
+    </section>
+
+    <section class="view" id="tasks">
+      <div class="section-heading"><div><span class="eyebrow">REWARD CENTER</span><h2>Available tasks</h2><p>Try the sample activities below. They only update this browser demo.</p></div></div>
+      <div class="task-grid full" id="allTasks"></div>
+    </section>
+
+    <section class="view" id="referrals">
+      <div class="section-heading"><div><span class="eyebrow">GROW TOGETHER</span><h2>Invite friends</h2><p>Referral rewards should only be funded by a real campaign budget.</p></div></div>
+      <div class="referral-card"><div><span class="pill">YOUR DEMO INVITE CODE</span><h2>MIRZA-DEMO</h2><p>Share your invite code with friends. This prototype does not track real signups.</p><button class="primary-btn" id="copyCode">Copy invite code</button></div><div class="referral-icon">♧</div></div>
+      <div class="stats"><article class="stat-card"><span>Sample invites</span><strong>3</strong><small>Not verified signups</small></article><article class="stat-card"><span>Referral reward</span><strong>Rs 0</strong><small>No campaign funded</small></article></div>
+    </section>
+
+    <section class="view" id="wallet">
+      <div class="section-heading"><div><span class="eyebrow">ACCOUNT SUMMARY</span><h2>My wallet</h2><p>All entries here are local sample data, not a cash balance.</p></div></div>
+      <div class="wallet-panel"><div><span>Demo wallet balance</span><strong id="walletBalance">Rs 125.00</strong><small>Not real funds · Not withdrawable</small></div><div class="wallet-symbol">◈</div></div>
+      <h3 class="table-title">Recent activity</h3><div class="activity-list" id="activityList"></div>
+    </section>
+
+    <section class="view" id="withdraw">
+      <div class="section-heading"><div><span class="eyebrow">PAYOUT CENTER</span><h2>Request withdrawal</h2><p>Real payouts are not active in this demo.</p></div></div>
+      <div class="withdraw-layout"><div class="withdraw-form"><div class="form-lock">🔒 Demo-only form</div><label>Withdrawal method<select id="method"><option>Easypaisa</option><option>JazzCash</option></select></label><label>Account holder name<input id="holder" placeholder="Your registered name"></label><label>Wallet / mobile number<input id="number" inputmode="tel" placeholder="03XXXXXXXXX"></label><label>Amount (PKR)<input id="amount" type="number" min="100" placeholder="Minimum Rs 100"></label><button class="primary-btn wide" id="withdrawBtn">Preview withdrawal request</button><small class="form-help">This only shows a preview. It does not send money or create a real payout request.</small></div><div class="withdraw-info"><h3>Before you withdraw</h3><ul><li>Only verified, sponsor-funded rewards can be paid.</li><li>Identity and account ownership checks may be required.</li><li>Minimum amount and fees must be published before launch.</li><li>Never pay a fee to “unlock” a promised earning balance.</li></ul><div class="warning">Real withdrawals require a secure backend and an approved payout process.</div></div></div>
+    </section>
+
+    <footer>© 2026 MIRZA EARN <span>Built for transparent rewards.</span></footer>
+  </main>
+</div>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
